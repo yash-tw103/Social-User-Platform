@@ -1,0 +1,83 @@
+<%- include('header') %>
+
+  <h2>&nbsp; &nbsp;Posts</h2>
+  <% if(locals.user) { %>
+    <div style="background-color: #a37878; padding: 1rem; width: 40rem;margin: 1rem;">
+
+      <form action="/post/create" method="post">
+        <div class="input-group">
+
+          <span class="input-group-text">Write <br> Something</span>
+          <textarea class="form-control" name="content" cols="10" aria-label="With textarea"
+            style="border: 1px solid rgb(97, 96, 96);" required></textarea>
+        </div>
+        <div>
+          <br>
+          <button class="btn btn-primary" type="submit">Post</button>
+        </div>
+      </form>
+      <% } %>
+    </div><br>
+    <div style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(77,67,63,1) 22%, rgba(9,206,246,1) 100%);">
+
+      <ul class="list-group">
+        <% posts.map((post)=>{ %>
+
+          <p>
+            <li class="list-group-item"
+              style="background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); color: antiquewhite;">
+              <button class="btn btn-warning">
+                <%= post.user.name %>
+              </button> &nbsp; <%= post.content %>
+                <br>
+                <br>
+                <% if(locals.user) { %>
+
+                  <form class="row g-3" action="/comment/create" method="post">
+
+                    <div class="col-auto" style="color: antiquewhite;">
+
+                      <input type="text" name="content" class="form-control" id="content"
+                        placeholder="Type comment here..." required>
+                      <input type="hidden" name="post" value="<%= post._id %>">
+                    </div>
+                    <div class="col-auto">
+                      <button type="submit" class="btn btn-primary mb-3">Comment</button>
+                    </div>
+                  </form>
+
+
+                  <% } %>
+
+                    <div>
+                      <% post.comments.map((comment)=>{ %>
+                        <hr>
+                        <p>
+                          <small><button class="btn btn-success btn-sm">
+                              <%= comment.user.name %>
+                            </button>&nbsp;&nbsp; <span
+                              style="border: 0.6px solid rgb(65, 64, 64);  padding: 5px; font-weight: bold;">
+                              <%= comment.content %>
+                            </span> </small>
+                        </p>
+
+
+                        <% }) %>
+                    </div>
+            </li>
+          </p>
+
+
+          <% }) %>
+
+
+
+
+      </ul>
+    </div>
+
+
+
+
+
+    <%- include('footer') %>
