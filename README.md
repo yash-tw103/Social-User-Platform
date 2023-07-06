@@ -1,4 +1,4 @@
-# Socila-User-Platform-like-quora
+# Social-User-Platform-like-quora
 # Understanding Folder Structure
 # Config
   - dbconnection.js contains all our databse connnection Through MongoDb
