@@ -7,11 +7,11 @@
  - commentsController.js contains all the Functions for our CommentsRoutes to add comments to User Post.
  - homeController contains the main view of our App
  - postControllers contains our functionality to upload post
- - Usercontrollers contains function for reisterin and authenticatin user
+ - Usercontrollers contains function for reigsterinh and authenticating user
 # models
    - commentsSchema contains Schema of our comments which is linked throuh posts and user.
    - postsSchema contains Schema to insert post in database linked with User having ccomments as an array.
-   - userSchema contains Schema to reister user with name , email , password.
+   - userSchema contains Schema to register user with name , email , password.
 # Routes
   Contains all the routes for the Controllers function
 # Views
