@@ -17,3 +17,11 @@
 # Views
   Contains Home file for all users post , profile for the particular user profile page , sign up and sign in file.
    
+# More Features Yet To add 
+ - Creating a chatting Engine.
+ - Adding followers and following for the User.
+ - Creating action for liking Disliking Post.
+ - Updating User Profile
+ 
+# more Complex Features to add
+ Adding a payment option for the user for taking Subscriptions forthe premium posts etc.
