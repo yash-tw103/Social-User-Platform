@@ -24,4 +24,4 @@
  - Updating User Profile
  
 # more Complex Features to add
- Adding a payment option for the user for taking Subscriptions forthe premium posts etc.
+ Adding a payment option for the user for taking Subscriptions for the premium posts etc.
